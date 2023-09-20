@@ -3,13 +3,14 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Kumbh_Sans } from "next/font/google";
 import { NextAuthProvider } from "./Providers";
+import CategoryNavbar from "@/components/base/CategoryNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 const kumbh_sans = Kumbh_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Airbnb",
-  description: "Book room with Airbnb",
+  description: "Airbnb: Holiday Homes & Apartment Rentals",
 };
 
 export default function RootLayout({
@@ -21,8 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={kumbh_sans.className}>
         <NextAuthProvider>
-          <div className="max-w-[1380px] mx-auto">
+          <div className="max-w-[1380px] mx-auto overflow-hidden">
             <Navbar />
+            <CategoryNavbar />
             {children}
           </div>
         </NextAuthProvider>
