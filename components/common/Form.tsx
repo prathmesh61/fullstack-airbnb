@@ -15,6 +15,7 @@ export function Form() {
   const router = useRouter();
   const [image, setImage] = useState<File | undefined>();
   const [categoriesArray, setCategoriesArray] = useState<string[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const {
     register,
@@ -27,6 +28,7 @@ export function Form() {
     "https://api.cloudinary.com/v1_1/dpvjdarqx/image/upload";
   const CLOUDINARY_UPLOAD_PRESET = "airbnb";
   const onSubmit = async (data: HomeTypeSchema) => {
+    setLoading(true);
     const file = image;
     const formData = new FormData();
     // @ts-ignore
@@ -42,6 +44,9 @@ export function Form() {
         email: session?.user?.email,
         categories: categoriesArray,
       });
+      setLoading(false);
+      console.log(course);
+
       router.push("/");
     } catch (error) {
       console.log(error);
@@ -197,8 +202,12 @@ export function Form() {
         setCategoriesArray={setCategoriesArray}
         categoriesArray={categoriesArray}
       />
-      <Button type="submit" className="bg-brand text-white w-full">
-        Continue
+      <Button
+        type="submit"
+        disabled={loading}
+        className="bg-brand text-white w-full"
+      >
+        {loading ? "Loading..." : "Continue"}
       </Button>
     </form>
   );

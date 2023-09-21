@@ -1,5 +1,8 @@
 import HomeCard from "./HomeCard";
+
 export default function HomeCards({ data }: { data: Array<HomeDataType> }) {
+  console.log(data);
+
   return (
     <div className="flex flex-wrap items-start gap-5">
       {data.map((item: HomeDataType) => (

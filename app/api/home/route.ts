@@ -3,7 +3,6 @@ import { connectMongoDB } from "@/lib/ConnectionDB";
 import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (req: NextRequest, res: NextResponse) => {
-  await connectMongoDB();
   const {
     title,
     price,
@@ -19,6 +18,7 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
   } = await req.json();
 
   try {
+    await connectMongoDB();
     const home = new Room({
       title,
       price,
@@ -44,6 +44,8 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
   try {
+    await connectMongoDB();
+
     const getAllHome = await Room.find().exec();
     return NextResponse.json(getAllHome, { status: 200 });
   } catch (error) {

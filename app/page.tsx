@@ -1,6 +1,6 @@
 import HomeCards from "@/components/common/HomeCards";
 async function getData(URL: string) {
-  const res = await fetch(URL);
+  const res = await fetch(URL, { next: { revalidate: 60 } });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");

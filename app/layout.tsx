@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={kumbh_sans.className}>
         <NextAuthProvider>
-          <div className="max-w-[1380px] mx-auto overflow-hidden">
+          <div className="max-w-[1440px] mx-auto overflow-hidden">
             <Navbar />
             <CategoryNavbar />
             {children}
