@@ -2,12 +2,12 @@ import Image from "next/image";
 import Loggin from "@/components/common/Loggin";
 import logo from "@/public/logo.png";
 
-import { Globe2, Globe, Search } from "lucide-react";
+import { Globe, Search } from "lucide-react";
 import Link from "next/link";
 export default function Navbar() {
   return (
     <div className="flex justify-between items-center p-5 border-b-2 border-gray-100">
-      <Link href={"/"}>
+      <Link href={"/?category=all"}>
         <Image
           src={logo}
           width={70}

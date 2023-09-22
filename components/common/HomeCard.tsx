@@ -42,7 +42,7 @@ export default function HomeCard({ item }: Props) {
     );
   } else if (
     searchParams === "all" ||
-    searchParams === "" ||
+    searchParams === process.env.NEXT_PUBLIC_URL ||
     searchParams === null
   ) {
     // Check if searchParams include in category if not then display all item

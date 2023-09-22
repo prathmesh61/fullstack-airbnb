@@ -1,23 +1,28 @@
 "use client";
 import React from "react";
-import { Button } from "../ui/button";
 import { signIn, signOut, useSession } from "next-auth/react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { User } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Loggin() {
-  const { status } = useSession();
+  const { data: session, status } = useSession();
 
   return (
     <div className="flex items-center ">
       <Popover>
         <PopoverTrigger>
-          <User size={30} className="bg-brand p-2 rounded-full text-white" />
+          <Image
+            src={session?.user?.image || ""}
+            width={30}
+            height={30}
+            className="rounded-full"
+            alt="user"
+          />
         </PopoverTrigger>
         <PopoverContent className="mr-5 mt-6 md:mt-3 flex flex-col items-start gap-4">
           {status === "authenticated" ? (
