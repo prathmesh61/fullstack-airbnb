@@ -1,20 +1,15 @@
-import Image from "next/image";
 import Loggin from "@/components/common/Loggin";
-import logo from "@/public/logo.png";
 
 import { Globe, Search } from "lucide-react";
 import Link from "next/link";
 export default function Navbar() {
   return (
     <div className="flex justify-between items-center p-5 border-b-2 border-gray-100">
-      <Link href={"/?category=all"}>
-        <Image
-          src={logo}
-          width={70}
-          height={70}
-          alt={"logo airbnb"}
-          className="cursor-pointer "
-        />
+      <Link
+        href={"/?category=all"}
+        className="text-lg font-extrabold bg-brand px-2 text-white"
+      >
+        Airbnb.
       </Link>
       <div className="w-fit hidden md:flex px-4 py-2 space-x-2 rounded-full border-2 text-black border-gray-300  items-center text-sm">
         <span>Anywhere |</span>
