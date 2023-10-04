@@ -59,7 +59,7 @@ export function Form() {
         </label>
         <Input
           type="number"
-          placeholder="Enter price"
+          placeholder="per night price"
           id="price"
           {...register("price")}
         />
