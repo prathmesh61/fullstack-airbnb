@@ -8,7 +8,7 @@ export default function HomeCards({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   return (
-    <div className="flex flex-wrap justify-center lg:justify-start lg:items-start gap-5">
+    <div className="flex flex-wrap justify-center lg:justify-start lg:items-start gap-5 ">
       {data.map((item: HomeDataType) => (
         <HomeCard key={item._id} item={item} searchParams={searchParams} />
       ))}

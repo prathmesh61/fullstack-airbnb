@@ -1,7 +1,6 @@
 "use client";
-import { User } from "lucide-react";
+import { UserCheck } from "lucide-react";
 import { useSession } from "next-auth/react";
-import Image from "next/image";
 import React from "react";
 
 type Props = {
@@ -21,8 +20,8 @@ export function ExtraRoomDetails({ data }: Props) {
             Guests-{data?.guests} | Bedrooms - {data?.rooms}
           </h3>
         </div>
-        <User
-          size={40}
+        <UserCheck
+          size={35}
           className="bg-zinc-300 cursor-pointer p-1 rounded-full"
         />
       </div>

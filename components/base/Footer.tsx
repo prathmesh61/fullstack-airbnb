@@ -5,7 +5,7 @@ import FooterBottom from "./FooterBottom";
 function Footer() {
   return (
     <div className="flex flex-col gap-2 mt-10 p-5">
-      <div className="flex flex-wrap justify-around gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
         <div className="flx flex-col items-start gap-4">
           <h2 className="text-lg font-bold text-left">Airbnb</h2>
           <div className="flex flex-col gap-2">
