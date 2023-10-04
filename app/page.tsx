@@ -15,7 +15,7 @@ export default async function Home({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const data = await getData(process.env.NEXT_PUBLIC_URL! + "/api/home");
+  const data = await getData("http://localhost:3004/api/home");
 
   return (
     <main className="p-4 border-b-2 border-zinc-200">
