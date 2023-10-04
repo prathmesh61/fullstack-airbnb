@@ -1,6 +1,6 @@
 import { Form } from "@/components/common/Form";
 import RoomPrice from "@/components/common/RoomPrice";
-
+export const runtime = "edge";
 function AddHome() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-5 items-center justify-center">

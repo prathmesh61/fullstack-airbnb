@@ -15,7 +15,7 @@ type HomeDataType = {
   price: string;
   description: string;
   _id: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
   __v: number;
 };
