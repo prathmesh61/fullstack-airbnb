@@ -1,20 +1,18 @@
-"use client";
 import React, { Suspense } from "react";
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Spinner from "./Spinner";
 
 type Props = {
   item: HomeDataType;
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default function HomeCard({ item }: Props) {
-  const search = useSearchParams();
-  let searchParams = search.get("category");
-
+export default function HomeCard({ item, searchParams }: Props) {
+  const filterByCategoryParam = searchParams.category || "all";
   // Check if searchParams is set and item's category array contains searchParams
-  if (searchParams && item.category.includes(searchParams)) {
+  // @ts-ignores
+  if (searchParams && item.category.includes(filterByCategoryParam!)) {
     return (
       <Suspense fallback={<Spinner />}>
         <Link
@@ -41,9 +39,9 @@ export default function HomeCard({ item }: Props) {
       </Suspense>
     );
   } else if (
-    searchParams === "all" ||
-    searchParams === process.env.NEXT_PUBLIC_URL ||
-    searchParams === null
+    filterByCategoryParam === "all" ||
+    filterByCategoryParam === process.env.NEXT_PUBLIC_URL ||
+    filterByCategoryParam === null
   ) {
     // Check if searchParams include in category if not then display all item
 

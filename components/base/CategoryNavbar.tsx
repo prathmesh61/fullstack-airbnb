@@ -1,23 +1,15 @@
-"use client";
 import { categories } from "@/lib/category";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function CategoryNavbar() {
-  const router = useRouter();
-
-  const addCategoryToUrl = (category: CategoriesType) => {
-    const fullURL = new URL(window.location.href);
-    fullURL.searchParams.set("category", category.name);
-    router.replace(`/${fullURL.search}`);
-  };
   return (
     <div className="p-4 flex w-full lg:justify-center items-center space-x-6 overflow-x-scroll lg:overflow-x-hidden whitespace-nowrap border-b-2 border-gray-100">
       {categories.map((category) => (
-        <div
+        <Link
+          href={`?category=${category.name}`}
           className="flex flex-col items-center cursor-pointer"
           key={category.name}
-          onClick={() => addCategoryToUrl(category)}
         >
           <Image
             width={15}
@@ -26,7 +18,7 @@ function CategoryNavbar() {
             alt={category.name}
           />
           <span className="text-xs">{category.name}</span>
-        </div>
+        </Link>
       ))}
     </div>
   );
