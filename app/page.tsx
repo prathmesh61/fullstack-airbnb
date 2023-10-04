@@ -1,8 +1,8 @@
 import CategoryNavbar from "@/components/base/CategoryNavbar";
 import HomeCards from "@/components/common/HomeCards";
-async function getData(URL: string) {
+async function getData(Uri: string) {
   try {
-    const res = await fetch(URL, { next: { revalidate: 20 } });
+    const res = await fetch(Uri);
     return res.json();
   } catch (error: any) {
     console.log("Failed to fetch data", error);

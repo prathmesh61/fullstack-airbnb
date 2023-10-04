@@ -46,7 +46,7 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
   try {
     await connectMongoDB();
 
-    const getAllHome = await Room.find().exec();
+    const getAllHome = await Room.find();
     return NextResponse.json(getAllHome, { status: 200 });
   } catch (error) {
     console.log(error);
