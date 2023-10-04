@@ -19,7 +19,7 @@ export default async function page({ params }: ParamsType) {
   );
 
   return (
-    <div className="p-4 ">
+    <div className="p-4 border-b-2 border-gray-200">
       <RoomDetail data={data} />
     </div>
   );

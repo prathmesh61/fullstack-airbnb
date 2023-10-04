@@ -8,7 +8,7 @@ type Props = {
 
 export default function RoomDetail({ data }: Props) {
   return (
-    <div className="flex flex-col w-full mt-10 gap-4">
+    <div className="flex flex-col w-full mt-10 gap-4 mb-5 ">
       <div>
         <h1 className="font-bold text-lg lg:text-3xl capitalize">
           {data?.title}

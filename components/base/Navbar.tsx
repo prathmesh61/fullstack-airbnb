@@ -13,10 +13,10 @@ export default function Navbar() {
           width={70}
           height={70}
           alt={"logo airbnb"}
-          className="cursor-pointer hidden md:flex"
+          className="cursor-pointer "
         />
       </Link>
-      <div className="w-fit px-4 py-2 space-x-2 rounded-full border-2 text-black border-gray-300 flex items-center text-sm">
+      <div className="w-fit hidden md:flex px-4 py-2 space-x-2 rounded-full border-2 text-black border-gray-300  items-center text-sm">
         <span>Anywhere |</span>
         <span>Any week |</span>
         <span className="bg-brand rounded-full p-1 cursor-pointer text-white">

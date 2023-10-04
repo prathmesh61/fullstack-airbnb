@@ -19,3 +19,12 @@ type HomeDataType = {
   updatedAt?: string;
   __v: number;
 };
+
+type FooterLinkArray = {
+  name: string;
+  link: string;
+};
+type FooterLink = {
+  name: string;
+  link: string;
+};

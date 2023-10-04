@@ -22,7 +22,7 @@ export function ExtraRoomDetails({ data }: Props) {
           </h3>
         </div>
         <User
-          size={50}
+          size={40}
           className="bg-zinc-300 cursor-pointer p-1 rounded-full"
         />
       </div>
@@ -37,7 +37,7 @@ export function ExtraRoomDetails({ data }: Props) {
         <div className="grid grid-cols-2  md:grid-cols-3 grid-flow-dense gap-2">
           {data?.category.map((item) => (
             <span key={item} className="font-medium text-sm w-fit ">
-              {item}
+              - {item}
             </span>
           ))}
         </div>

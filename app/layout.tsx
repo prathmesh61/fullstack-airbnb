@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
 import { NextAuthProvider } from "./Providers";
-import CategoryNavbar from "@/components/base/CategoryNavbar";
+import Footer from "@/components/base/Footer";
 
 const kumbh_sans = Kumbh_Sans({ subsets: ["latin"] });
 
@@ -24,6 +24,7 @@ export default function RootLayout({
           <div className="max-w-[1440px] mx-auto overflow-hidden">
             <Navbar />
             {children}
+            <Footer />
           </div>
         </NextAuthProvider>
       </body>
